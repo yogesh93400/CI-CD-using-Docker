@@ -31,14 +31,16 @@ pipeline {
           }
         }
      
-//   stage('Publish image to Docker Hub') {
+  stage('Publish image to Docker Hub') {
           
-//             steps {
-//         withDockerRegistry([ credentialsId: "dockerHub", url: "" ]) {
-//           sh  'docker push nikhilnidhi/samplewebapp:latest'
-//         //  sh  'docker push nikhilnidhi/samplewebapp:$BUILD_NUMBER' 
-//         }
-                  
+            steps {
+  withCredentials([string(credentialsId: 'a84fb658-7846-485a-ba84-da5c1013832b', variable: 'dockerhub_id')]) {
+    // some block
+
+          sh  'docker push yogesh93/calculatorproject:latest'
+        //  sh  'docker push nikhilnidhi/samplewebapp:$BUILD_NUMBER' 
+        }
+	    }}             
 //           }
 //         }
      
