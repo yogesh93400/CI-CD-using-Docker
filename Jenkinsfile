@@ -24,8 +24,8 @@ pipeline {
   stage('Docker Build and Tag') {
            steps {
               
-                sh 'docker build -t yogesh:latest .' 
-                sh 'docker tag yogesh yogesh93/calculatorproject:latest'
+                bat 'docker build -t yogesh:latest .' 
+                bat 'docker tag yogesh yogesh93/calculatorproject:latest'
                 //sh 'docker tag samplewebapp nikhilnidhi/samplewebapp:$BUILD_NUMBER'
                
           }
